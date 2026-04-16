@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Amazon-style button */
+.btn-primary {
+  @apply bg-amazon-yellow hover:bg-amazon-yellow-hover text-black font-medium rounded-lg px-4 py-2 transition-colors cursor-pointer;
+}
+
+.btn-secondary {
+  @apply bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-lg px-4 py-2 transition-colors cursor-pointer;
+}
+
+/* Star rating */
+.star-rating {
+  color: #ffa41c;
+}
+
+/* Product card hover effect */
+.product-card {
+  @apply transition-shadow duration-200 hover:shadow-lg;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #febd69;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
