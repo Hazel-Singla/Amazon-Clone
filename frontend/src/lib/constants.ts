@@ -9,4 +9,4 @@ export const CATEGORIES = [
 
 export const DEFAULT_USER_ID = 1;
 
-export const API_BASE_URL = (typeof window !== 'undefined' && (window as any).ENV?.NEXT_PUBLIC_API_URL) || 'http://localhost:5000/api';
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';

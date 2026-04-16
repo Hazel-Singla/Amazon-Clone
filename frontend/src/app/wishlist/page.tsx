@@ -54,7 +54,8 @@ export default function WishlistPage() {
       setMovingToCart(productId);
       
       // Add to cart
-      await fetch('http://localhost:5000/api/cart', {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+      await fetch(`${API_URL}/cart`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ product_id: productId, quantity: 1 })
